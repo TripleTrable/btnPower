@@ -59,11 +59,11 @@ struct bcm2711_peripheral {
 // Map  physical address defined in structure (p->addr_p)
 int map_peripheral(struct bcm2711_peripheral  *p)
 {
-    printf("sizeof(unsigned long): %ld",sizeof(unsigned long));
+    printf("GPIO_Handler: sizeof(unsigned long): %ld",sizeof(unsigned long));
    // Open /dev/mem
    if ((p->mem_fd = open("/dev/mem", O_RDWR|O_SYNC) ) < 0) 
    {
-      printf("Failed to open /dev/mem.\n");
+      printf("GPIO_Handler: Failed to open /dev/mem.\n");
       return -1;
    }
  
@@ -77,7 +77,7 @@ int map_peripheral(struct bcm2711_peripheral  *p)
    );
  
    if (p->map == MAP_FAILED) {
-        perror("mmap");
+        perror("GPIO_Handler: mmap");
         return -1;
    }
  
