@@ -1,6 +1,6 @@
-CC:=gcc
-CXX:=g++
-LD:=g++
+CC:=aarch64-rpi4-linux-uclibc-gcc
+CXX:=aarch64-rpi4-linux-uclibc-g++
+LD:=aarch64-rpi4-linux-uclibc-g++
 RM:= rm
 
 BINDIR:=bin
@@ -16,9 +16,9 @@ DEPDIR:=.d
 
 CFLAGS:= -std=c11
 CXXFLAGS:= -std=c++17
-CPPFLAGS := -g -Wall -Wextra -pedantic -I $(INCDIR) -I /usr/include/freetype2
+CPPFLAGS := -g -Wall -Wextra -pedantic -I $(INCDIR) -I /home/lars/info/wifi2linux/buildroot/output/host/include
 LDFLAGS:=
-LDLIBS:= -lfreetype
+LDLIBS:=
 DEPFLAGS = -MT $@ -MD -MP -MF $(DEPDIR)/$*.Td
 
 
